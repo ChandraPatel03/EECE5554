@@ -1,0 +1,13 @@
+<launch>
+    <!-- Define serial port parameter with default value -->
+    <arg name="port" default="/dev/ttyUSB0" />
+
+    <!-- Launch the standalone_driver.py node -->
+    <node name="standalone_driver" 
+    pkg="gps_driver" 
+    type="standalone_driver.py" 
+    output="screen">
+        <!-- Remap the serial port parameter to the argument value -->
+        <param name="port" value="$(arg port)" />
+    </node>
+</launch>
