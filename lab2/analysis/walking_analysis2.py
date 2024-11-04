@@ -36,9 +36,10 @@ def analyze_walking_data(walking_df):
     walking_northing -= walking_northing[0]
 
     # Calculate centroids for Walking data
-    #walking_centroid = {
-        #'easting': np.mean(walking_easting),
-        #'northing': np.mean(walking_northing)
+    walking_centroid = {
+        'easting': nu.mean(walking_easting),
+        'northing': nu.mean(walking_northing)
+    }
 
     # Calculate standard deviation for Walking data
     walking_std_easting = nu.std(walking_easting)
@@ -70,14 +71,14 @@ def analyze_walking_data(walking_df):
     mpl.grid(True)
 
     # Calculate Euclidean distance from each point to the centroid for Walking data
-    #walking_distances = np.sqrt((walking_easting - walking_centroid['easting'])**2 + (walking_northing - walking_centroid['northing'])**2)
+    walking_distances = nu.sqrt((walking_easting - walking_centroid['easting'])**2 + (walking_northing - walking_centroid['northing'])**2)
 
     # Print mean errors
-    #walking_distance = np.mean(walking_distances)
+    #walking_distance = nu.mean(walking_distances)
     #print("Error for Walking data:", walking_distance)
 
 if __name__ == '__main__':
-    walking_df = load_rosbag('/home/chandra/catkin_ws/src/Square_occluded.bag', '/gps')
+    walking_df = load_rosbag('/home/chandra/EECE5554/lab2/data/square_open_area.bag', '/gps')
 
     # Analyze walking data
     analyze_walking_data(walking_df)

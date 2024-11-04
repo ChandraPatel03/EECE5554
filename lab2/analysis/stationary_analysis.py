@@ -133,8 +133,8 @@ def analyze_stationary_data(open_df, occluded_df):
     mpl.legend()
 
 if __name__ == '__main__':
-    open_spot_df = load_rosbag('/home/chandra/catkin_ws/src/Stat_open.bag', '/gps')
-    occluded_spot_df = load_rosbag('/home/chandra/catkin_ws/src/Stat_occluded.bag', '/gps')
+    open_spot_df = load_rosbag('/home/chandra/EECE5554/lab2/data/Stat_open.bag', '/gps')
+    occluded_spot_df = load_rosbag('/home/chandra/EECE5554/lab2/data/Square_occluded.bag', '/gps')
 
     # Analyze stationary data
     analyze_stationary_data(open_spot_df, occluded_spot_df)
