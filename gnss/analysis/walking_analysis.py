@@ -77,7 +77,7 @@ def analyze_walking_data(walking_df):
     #print("Error for Walking data:", walking_distance)
 
 if __name__ == '__main__':
-    walking_df = load_rosbag('/home/chandra/catkin_ws/src/gnss/data/walking.bag', '/gps')
+    walking_df = load_rosbag('/home/chandra/catkin_ws/src/Square_occluded moving.bag', '/gps')
 
     # Analyze walking data
     analyze_walking_data(walking_df)
